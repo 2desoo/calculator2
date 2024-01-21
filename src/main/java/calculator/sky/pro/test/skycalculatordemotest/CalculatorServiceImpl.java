@@ -14,7 +14,7 @@ public class CalculatorServiceImpl implements CalculatorService {
 
     public String plusCalculator(Integer num1, Integer num2) {
         if (num1 == null || num2 == null) {
-            return "Error";
+            return "Error.";
         }
         int result = num1 + num2;
         return num1 + " + " + num2 + " = " + result;
