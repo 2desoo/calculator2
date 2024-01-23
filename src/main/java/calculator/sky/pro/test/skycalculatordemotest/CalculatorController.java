@@ -6,41 +6,47 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+//@RequestMapping("/calculator")
 public class CalculatorController {
 
     private final CalculatorService calculatorService;
+
 
     public CalculatorController(CalculatorService calculatorService) {
         this.calculatorService = calculatorService;
     }
 
-    @GetMapping
-    public String hello() {
-        return calculatorService.hello();
-    }
 
-    @RequestMapping("/calculator")
+    @GetMapping(path = "/calculator")
     public String welcomeCalculator() {
         return calculatorService.welcomeCalculator();
     }
 
-    @RequestMapping("/calculator/plus")
-    public String plusCalculator(Integer num1, Integer num2) {
+    @GetMapping("calculator/plus")
+    public String plusCalculator(
+            @RequestParam(required = false) Integer num1,
+            @RequestParam(required = false) Integer num2) {
         return calculatorService.plusCalculator(num1, num2);
     }
 
-    @RequestMapping("/calculator/minus")
-    public String minusCalculator(Integer num1, Integer num2) {
+    @GetMapping("calculator/minus")
+    public String minusCalculator(
+            @RequestParam(required = false) Integer num1,
+            @RequestParam(required = false) Integer num2) {
         return calculatorService.minusCalculator(num1, num2);
     }
 
-    @RequestMapping("/calculator/multiply")
-    public String multiplyCalculator(Integer num1, Integer num2) {
+    @GetMapping("calculator/multiply")
+    public String multiplyCalculator(
+            @RequestParam(required = false) Integer num1,
+            @RequestParam(required = false) Integer num2) {
         return calculatorService.multiplyCalculator(num1, num2);
     }
 
-    @RequestMapping("/calculator/divide")
-    public String divideCalculator(Integer num1, Integer num2) {
+    @GetMapping("calculator/divide")
+    public String divideCalculator(
+            @RequestParam(required = false) Integer num1,
+            @RequestParam(required = false) Integer num2) {
         return calculatorService.divideCalculator(num1, num2);
     }
 

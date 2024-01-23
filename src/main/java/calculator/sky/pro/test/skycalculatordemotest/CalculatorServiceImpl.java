@@ -4,9 +4,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
-    public String hello() {
-        return "Hello";
-    }
 
     public String welcomeCalculator() {
         return "Welcome to Calculator";
