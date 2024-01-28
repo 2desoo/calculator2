@@ -4,9 +4,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
-    public String hello() {
-        return "Hello";
-    }
 
     public String welcomeCalculator() {
         return "Welcome to Calculator";
@@ -14,7 +11,7 @@ public class CalculatorServiceImpl implements CalculatorService {
 
     public String plusCalculator(Integer num1, Integer num2) {
         if (num1 == null || num2 == null) {
-            return "Error";
+            return "Error.";
         }
         int result = num1 + num2;
         return num1 + " + " + num2 + " = " + result;

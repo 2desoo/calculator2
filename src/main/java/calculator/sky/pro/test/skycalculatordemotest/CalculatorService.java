@@ -1,7 +1,6 @@
 package calculator.sky.pro.test.skycalculatordemotest;
 
 public interface CalculatorService {
-    String hello();
     String welcomeCalculator();
     String plusCalculator(Integer num1, Integer num2);
     String minusCalculator(Integer num1, Integer num2);
